@@ -9,12 +9,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  firebase_core: ^2.27.1
+  firebase_database: ^10.5.7
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  firebase_core: ^2.27.1
-  firebase_database: ^10.5.7
+  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
