@@ -41,51 +41,53 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA0FoJthG_EpWk2BerrrAeWJDB1tecnOS4',
-    appId: '1:88092310883:web:4be228b5092412a734a756',
-    messagingSenderId: '88092310883',
-    projectId: 'belajarmdp-a82e8',
-    authDomain: 'belajarmdp-a82e8.firebaseapp.com',
-    databaseURL: 'https://belajarmdp-a82e8-default-rtdb.firebaseio.com',
-    storageBucket: 'belajarmdp-a82e8.firebasestorage.app',
+    apiKey: 'AIzaSyCsqUb03KnuX1hSkQZfjFSfiQwci_chjWs',
+    appId: '1:50462271102:web:f383ac7bb30666d7be9a2f',
+    messagingSenderId: '50462271102',
+    projectId: 'mdpgold-ace92',
+    authDomain: 'mdpgold-ace92.firebaseapp.com',
+    databaseURL: 'https://mdpgold-ace92-default-rtdb.firebaseio.com',
+    storageBucket: 'mdpgold-ace92.firebasestorage.app',
+    measurementId: 'G-X7J49PFFEH',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAmDPKTB4bTe42PVlaoX2byT7t7ip6kxgc',
-    appId: '1:88092310883:android:f435a98fa1dfbf5834a756',
-    messagingSenderId: '88092310883',
-    projectId: 'belajarmdp-a82e8',
-    databaseURL: 'https://belajarmdp-a82e8-default-rtdb.firebaseio.com',
-    storageBucket: 'belajarmdp-a82e8.firebasestorage.app',
+    apiKey: 'AIzaSyBiRzZ47P6OlMfqk3I_Xv3Ivyvhz_62NgU',
+    appId: '1:50462271102:android:1db424594512e958be9a2f',
+    messagingSenderId: '50462271102',
+    projectId: 'mdpgold-ace92',
+    databaseURL: 'https://mdpgold-ace92-default-rtdb.firebaseio.com',
+    storageBucket: 'mdpgold-ace92.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBbRy26wWIXniZ9ydsOCdQ8HabkCfSKSkk',
-    appId: '1:88092310883:ios:df88ec600b0902eb34a756',
-    messagingSenderId: '88092310883',
-    projectId: 'belajarmdp-a82e8',
-    databaseURL: 'https://belajarmdp-a82e8-default-rtdb.firebaseio.com',
-    storageBucket: 'belajarmdp-a82e8.firebasestorage.app',
-    iosBundleId: 'com.example.belajar',
+    apiKey: 'AIzaSyDFdsveN_loXqE5OKTOevRMZQ4FCop7qas',
+    appId: '1:50462271102:ios:2bfe7dc3c5cbc8bdbe9a2f',
+    messagingSenderId: '50462271102',
+    projectId: 'mdpgold-ace92',
+    databaseURL: 'https://mdpgold-ace92-default-rtdb.firebaseio.com',
+    storageBucket: 'mdpgold-ace92.firebasestorage.app',
+    iosBundleId: 'com.example.mdpGold',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBbRy26wWIXniZ9ydsOCdQ8HabkCfSKSkk',
-    appId: '1:88092310883:ios:df88ec600b0902eb34a756',
-    messagingSenderId: '88092310883',
-    projectId: 'belajarmdp-a82e8',
-    databaseURL: 'https://belajarmdp-a82e8-default-rtdb.firebaseio.com',
-    storageBucket: 'belajarmdp-a82e8.firebasestorage.app',
-    iosBundleId: 'com.example.belajar',
+    apiKey: 'AIzaSyDFdsveN_loXqE5OKTOevRMZQ4FCop7qas',
+    appId: '1:50462271102:ios:2bfe7dc3c5cbc8bdbe9a2f',
+    messagingSenderId: '50462271102',
+    projectId: 'mdpgold-ace92',
+    databaseURL: 'https://mdpgold-ace92-default-rtdb.firebaseio.com',
+    storageBucket: 'mdpgold-ace92.firebasestorage.app',
+    iosBundleId: 'com.example.mdpGold',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyA0FoJthG_EpWk2BerrrAeWJDB1tecnOS4',
-    appId: '1:88092310883:web:1b14666382a15f1734a756',
-    messagingSenderId: '88092310883',
-    projectId: 'belajarmdp-a82e8',
-    authDomain: 'belajarmdp-a82e8.firebaseapp.com',
-    databaseURL: 'https://belajarmdp-a82e8-default-rtdb.firebaseio.com',
-    storageBucket: 'belajarmdp-a82e8.firebasestorage.app',
+    apiKey: 'AIzaSyCsqUb03KnuX1hSkQZfjFSfiQwci_chjWs',
+    appId: '1:50462271102:web:a65d7d9eb2b15ac7be9a2f',
+    messagingSenderId: '50462271102',
+    projectId: 'mdpgold-ace92',
+    authDomain: 'mdpgold-ace92.firebaseapp.com',
+    databaseURL: 'https://mdpgold-ace92-default-rtdb.firebaseio.com',
+    storageBucket: 'mdpgold-ace92.firebasestorage.app',
+    measurementId: 'G-2MFZZWNRQF',
   );
 }
