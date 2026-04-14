@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "88092310883",
+    "firebase_url": "https://belajarmdp-a82e8-default-rtdb.firebaseio.com",
+    "project_id": "belajarmdp-a82e8",
+    "storage_bucket": "belajarmdp-a82e8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88092310883:android:f435a98fa1dfbf5834a756",
+        "android_client_info": {
+          "package_name": "com.example.belajar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmDPKTB4bTe42PVlaoX2byT7t7ip6kxgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
