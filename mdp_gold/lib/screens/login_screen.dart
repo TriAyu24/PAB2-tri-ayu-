@@ -1,46 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:latihan/screens/price_list.dart';
-import 'package:latihan/services/auth_service.dart';
+import 'package:mdp_gold/screens/price_list_screen.dart';
+import 'package:mdp_gold/screens/register_screen.dart';
+import 'package:mdp_gold/services/auth_service.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _confirmPasswordController = TextEditingController();
   final AuthService _authService = AuthService();
   bool _isLoading = false;
   String? _errorMessage;
 
-  Future<void> _register() async {
-    // Validasi: pastikan password dan confirm password sama
-    if (_passwordController.text != _confirmPasswordController.text) {
-      setState(() {
-        _errorMessage = "Passwords do not match";
-      });
-      return;
-    }
-
+  Future<void> _login() async {
     setState(() {
       _isLoading = true;
       _errorMessage = null;
     });
 
     try {
-      await _authService.signUp(
+      await _authService.signIn(
         _emailController.text.trim(),
         _passwordController.text.trim(),
       );
       if (mounted) {
-        // pushAndRemoveUntil menghapus semua halaman sebelumnya dari stack
-        Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (context) => const PriceList()),
-          (route) => false,
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const PriceListScreen()),
         );
       }
     } catch (e) {
@@ -66,7 +56,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         height: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.teal.shade800, Colors.teal.shade400],
+            colors: [Colors.blue.shade800, Colors.blue.shade400],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -77,13 +67,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(
-                  onPressed: () => Navigator.pop(context),
-                  icon: const Icon(Icons.arrow_back, color: Colors.white),
-                ),
-                const SizedBox(height: 10),
                 const Text(
-                  'Create Account',
+                  'Welcome Back',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 32,
@@ -92,13 +77,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  'Join us to start tracking gold prices',
+                  'Login to continue tracking gold prices',
                   style: TextStyle(
                     color: Colors.white70,
                     fontSize: 16,
                   ),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 50),
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
@@ -136,18 +121,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 20),
-                      TextField(
-                        controller: _confirmPasswordController,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          labelText: 'Confirm Password',
-                          prefixIcon: const Icon(Icons.lock_reset),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
                       if (_errorMessage != null) ...[
                         const SizedBox(height: 15),
                         Text(
@@ -161,9 +134,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         width: double.infinity,
                         height: 50,
                         child: ElevatedButton(
-                          onPressed: _isLoading ? null : _register,
+                          onPressed: _isLoading ? null : _login,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.teal.shade700,
+                            backgroundColor: Colors.blue.shade700,
                             foregroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
@@ -173,7 +146,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           child: _isLoading
                               ? const CircularProgressIndicator(color: Colors.white)
                               : const Text(
-                                  'Sign Up',
+                                  'Login',
                                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                                 ),
                         ),
@@ -181,12 +154,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 40),
                 Center(
                   child: TextButton(
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => const RegisterScreen()),
+                      );
+                    },
                     child: const Text(
-                      'Already have an account? Login',
+                      'Don\'t have an account? Sign Up',
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
