@@ -4,15 +4,15 @@ publish_to: 'none'
 version: 0.1.0
 
 environment:
-  sdk: ^3.9.2
+  sdk: ^3.11.5
 
 dependencies:
-  dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:   # ← paket localization bawaan Flutter
     sdk: flutter
-  intl: any                # ← paket format teks internasional
+
+  intl: ^0.20.1            
   firebase_core: ^4.7.0
   cloud_firestore: ^6.3.0
   image_picker: ^1.1.2
