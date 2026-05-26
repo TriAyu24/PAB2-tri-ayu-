@@ -13,16 +13,18 @@ import 'services/fcm_service.dart';
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   debugPrint('Handling a background message: ${message.messageId}');
-  
+
   // If it's a data-only message (no notification object), we manually show it
   if (message.notification == null && message.data.isNotEmpty) {
     final title = message.data['title'] ?? 'Notifikasi Baru';
     final body = message.data['body'] ?? 'Klik untuk melihat detail';
 
     final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
-    
+
     // We need to re-initialize for the background isolate
-    const androidSettings = AndroidInitializationSettings('@mipmap/ic_launcher');
+    const androidSettings = AndroidInitializationSettings(
+      '@mipmap/ic_launcher',
+    );
     const initSettings = InitializationSettings(android: androidSettings);
     await flutterLocalNotificationsPlugin.initialize(
       settings: initSettings, // Use named parameter
@@ -47,13 +49,16 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   final prefs = await SharedPreferences.getInstance();
   final savedLocale = prefs.getString('app_locale') ?? 'id';
 
-    try {
+  try {
     // Inisialisasi Firebase agar seluruh service Firebase dapat digunakan
-    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-    
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+
     // Mendaftarkan background handler untuk menangani
     // pesan FCM saat aplikasi berada di background/terminated
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
@@ -68,7 +73,6 @@ void main() async {
     // Menangkap error saat proses inisialisasi Firebase
     debugPrint('Error during Firebase initialization: $e');
   }
-
   runApp(MainApp(initialLocale: Locale(savedLocale)));
 }
 
